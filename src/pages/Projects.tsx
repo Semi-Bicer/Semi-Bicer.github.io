@@ -43,7 +43,7 @@ const copy = {
           'Performed exploratory analysis, engineered features, and compared regression, decision tree, and random forest models to evaluate accuracy.',
         skills: ['Python', 'Machine Learning', 'Data Analysis'],
       },
-    ] satisfies Project[],
+    ] as Project[],
   },
   tr: {
     heading: 'Öne Çıkan Projeler',
@@ -77,9 +77,13 @@ const copy = {
           'Keşifsel analizler yaptım, özellik mühendisliği uyguladım ve doğruluk için regresyon, karar ağacı ve rastgele orman modellerini kıyasladım.',
         skills: ['Python', 'Makine Öğrenmesi', 'Veri Analizi'],
       },
-    ] satisfies Project[],
+    ] as Project[],
   },
-}
+} satisfies Record<'en' | 'tr', {
+  heading: string
+  intro: string
+  projects: Project[]
+}>
 
 function Projects() {
   const { language, theme } = useLayoutContext()
